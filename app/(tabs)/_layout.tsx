@@ -7,6 +7,7 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { FontAwesome6 } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -26,18 +27,46 @@ export default function TabLayout() {
           default: {},
         }),
       }}>
+
       <Tabs.Screen
-        name="index"
+        name="tasks"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Tasks',
+          tabBarIcon: () => <FontAwesome6 name="list-check" size={24} color="black" />
+          ,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="rewards"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Rewards',
+          tabBarIcon: () => <FontAwesome6 name="check" size={24} color="black" />
+          ,
+        }}
+        
+      />
+      <Tabs.Screen
+        name="punishments"
+        options={{
+          title: 'Punishments',
+          tabBarIcon: () => <FontAwesome6 name="x" size={24} color="black" />
+          ,
+        }}
+      />
+      <Tabs.Screen
+        name="rules"
+        options={{
+          title: 'Rules',
+          tabBarIcon: () => <FontAwesome6 name="list-ol" size={24} color="black" />
+          ,
+        }}
+      />
+      <Tabs.Screen
+        name="chat"
+        options={{
+          title: 'Chat',
+          tabBarIcon: () => <FontAwesome6 name="message" size={24} color="black" />
+          ,
         }}
       />
     </Tabs>
